@@ -1,12 +1,17 @@
 from flask import Flask
-from flask import json
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torch.utils.data import Dataset
+from torch.utils.data import DataLoader
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
+from alpha_vantage.timeseries import TimeSeries 
+
 app = Flask(__name__)
 
-
-
-@app.route('/summary', methods=['GET'])
-def summary():
-    app.response_class(
-        response=json.dumps({"user": "John Doe"}),
-        mimetype='application/json'
-    )
+@app.route("/")
+def hello():
+    return "All libraries loaded"
