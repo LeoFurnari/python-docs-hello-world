@@ -1,4 +1,4 @@
-from flask import Flask
+import Flask
 import numpy as np
 import torch
 import torch.nn as nn
@@ -14,4 +14,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "All libraries loaded"
+    
+    return "all libraries loaded"
